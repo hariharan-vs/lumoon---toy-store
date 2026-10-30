@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 const rupee = (n) => "₹" + Number(n || 0).toLocaleString("en-IN");
-const api = (url, opts) => fetch(url, opts).then((r) => r.json());
+const api = (url, opts) =>
+  fetch(`${import.meta.env.VITE_API_URL || ""}${url}`, opts).then((r) => r.json());
 
 /* ---------------- Storefront ---------------- */
 function Store() {
